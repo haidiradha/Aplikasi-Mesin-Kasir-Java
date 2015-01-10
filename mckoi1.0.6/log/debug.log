@@ -1,0 +1,1502 @@
+[ TIME: Wed Dec 31 13:38:32 GMT-12:00 2014 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation (fk_products_suppliers) Columns = APP.products( idSupp ) -> APP.suppliers( idSupp )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:2022)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[  INSERT INTO products (id, nama, idSupp,harga,stok) VALUES
+('ABE008', 'AlbiKoles Al Biruni (Kolesterol)', 'ABE', 59000,100),
+('ABE009', 'Albimor Al Biruni (Membunuh Kanker dan Tumor)', 'ABE', 73000,100),
+('ABE010', 'Albirmaag/Herba Maag 50K Al Biruni', 'ABE', 59000,100),
+('ABE011', 'Albistrok (Membantu Memulihkan Stroke)', 'ABE', 73000,100),
+('ABE012', 'Bloody Cleanser Al Biruni (Detoksifikasi Racun Tub', 'ABE', 80000,100),
+('ABE013', 'Cing Cing Al Biruni (thypus, demam tinggi, stroke,', 'ABE', 80000,100),
+('ABE014', 'Herba Gurah Jumbo Al Biruni / Albiguraa Jumbo', 'ABE', 59000,100),
+('ABE015', 'Herba Gurah Pot Al Biruni (Albiguraa 18 Kapsul)', 'ABE', 31000,100),
+('ABE016', 'Herba Gurah Reguler Al Biruni (Albiguraa 25 kapsul', 'ABE', 36000,100),
+('ABE017', 'Herba Gurah Yunior Al Biruni (Albirugaa Untuk Anak', 'ABE', 36000,100),
+('ABE018', 'Herba Maag / AlbirMag Al Biruni', 'ABE', 36000,100),
+('ABE019', 'HerbaSam 50K Al Biruni', 'ABE', 59000,100),
+('ABE020', 'HerbaSlim Al Biruni', 'ABE', 59000,100),
+('ABE021', 'HerbaTensi Al Biruni (Hipertensi/Darah Tinggi)', 'ABE', 59000,100),
+('ABH004', 'SuburKand 1', 'ABH', 59000,100),
+('ABH005', 'SuburKand 2', 'ABH', 59000,100),
+('ABK006', 'Jamu Madu Habbatussauda Al-Barokah (Quality has a ', 'ABK', 100000,100),
+('ADP001', 'Kapsul Minyak Ikan Salmon isi 50 Softgel', 'ADP', 40000,100),
+('ADP002', 'Kapsul Serbuk Ashitaba Herbal (Seledri Jepang)', 'ADP', 40000,100),
+('ADR001', 'Madu Kaliandra 300 ml Addawa', 'ADR', 43000,100),
+('ADR002', 'Madu Kaliandra 700 ml Addawa', 'ADR', 77000,100),
+('ADR003', 'Madu Randu 1 Kg Addawa', 'ADR', 100000,100),
+('AEI074', 'Pembalut Herbal Bio Sanitary Pad Avail Day Use', 'AEI', 32000,100),
+('AEI075', 'Pembalut Herbal Bio Sanitary Pad Avail Night Use', 'AEI', 37500,100),
+('AEI076', 'Pembalut Herbal Bio Sanitary Pad Avail Pantiliner', 'AEI', 28000,100),
+('AFH004', 'Bedak Dingin Sari Bengkoang', 'AFH', 12000,100),
+('AFH005', 'Minyak Bulus Asli Kalimantan Kemasan Roll On', 'AFH', 15000,100),
+('AHZ022', 'Kapsul Minyak Habbatussauda'' Al Hijaz Isi 100', 'AHZ', 60000,100),
+('AHZ023', 'Kapsul Minyak Habbatussauda'' Al Hijaz Isi 200', 'AHZ', 110000,100),
+('AHZ024', 'Kapsul Minyak Habbatussauda'' Al Hijaz Isi 60', 'AHZ', 40000,100),
+('AID624', 'Madu Muwallad 175 gram', 'AID', 35000,100),
+('AID625', 'Madu Muwallad 375 gram', 'AID', 65000,100),
+('AID626', 'MiGa Zaitun Plus', 'AID', 22500,100),
+('AID627', 'Minyak Sawaan', 'AID', 20000,100),
+('AID628', 'Obat Tetes THM (Telinga Hidung Mata)', 'AID', 15000,100),
+('AID629', 'OTEM (Obat Tetes Mata)', 'AID', 25000,100),
+('AID630', 'PiCi (Power Cleanser) 50 Kapsul', 'AID', 35000,100),
+('AID631', 'PiCi (Power Cleanser) 75 Kapsul', 'AID', 70000,100),
+('AID632', 'Tabkir Naturaid (Khusus Wanita)', 'AID', 23000,100),
+('AID633', 'Zait Sauda''', 'AID', 20000,100),
+('AID634', 'Zulu Madu (Masker, Lulur dan Pasta Gigi)', 'AID', 25000,100),
+('AID635', 'Zulu Natural (Bedak, Masker dan Lulur)', 'AID', 25000,100),
+('AIN001', 'KAMIL 3 in 1 (Habbatussauda, Zaitun, Propolis) 70 ', 'AIN', 50000,100),
+('AIN002', 'kamil 3 in 1 isi 200 kapsul', 'AIN', 95000,100),
+('AIN003', 'Kapsul Minyak Habbatussauda'' Kamil isi 70', 'AIN', 45000,100),
+('AIN004', 'Kapsul Minyak Ikan KAMIL (Fish Oil + Omega 3)', 'AIN', 90000,100),
+('AIN005', 'Kapsul Minyak Zaitun KAMIL isi 70', 'AIN', 40000,100),
+('AIN006', 'Kapsul Serbuk Kamil Habbatussauda 70 Kapsul', 'AIN', 25000,100),
+('AIN007', 'Minyak Zaitun KAMIL 100 ml', 'AIN', 25000,100),
+('ALA002', 'Minyak Zaitun Al Amir 175 ml (Import)', 'ALA', 40000,100),
+('ALA003', 'Minyak Zaitun Extra Virgin Al Amir 250 ml', 'ALA', 60000,100),
+('ALW001', 'STOP Ngompol For Kids Al - Waliy', 'ALW', 25000,100),
+('ALW007', 'Madu Amandel For Kids Al - Waliy', 'ALW', 30000,100),
+('ASM006', 'Agadro NODIBET', 'ASM', 120000,100),
+('ASS062', 'Talbinah 200 gram Aminfood', 'ASS', 20000,100),
+('ASS063', 'Talbinah 400 gram Aminfood', 'ASS', 40000,100); ]
+
+]
+[ TIME: Wed Dec 31 13:39:10 GMT-12:00 2014 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation (fk_products_suppliers) Columns = APP.products( idSupp ) -> APP.suppliers( idSupp )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:2022)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Wed Dec 31 13:41:15 GMT-12:00 2014 ]
+% com.mckoi.database.sql.ParseException: Encountered "<EOF>" at line 53, column 48.
+Was expecting:
+    "(" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.InsertDataList(SQL.java:1741)
+	at com.mckoi.database.sql.SQL.Insert(SQL.java:972)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:183)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[  INSERT INTO products (username, pass, admin) VALUEs
+('kasir', 'kasir', false),
+('admin', 'admin', true);
+
+ ]
+
+]
+[ TIME: Wed Dec 31 13:45:17 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Can't find column: username
+	at com.mckoi.database.interpret.Statement.resolveColumn(Statement.java:226)
+	at com.mckoi.database.interpret.Insert.prepare(Insert.java:153)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ create table detilTransaksi
+(
+noTran int,
+id STRING(20),
+kuantitas int,
+constraint PK_detilTransaksi PRIMARY KEY(noTran,id),
+Constraint FK_detiTransaksi_transaksi FOREIGN KEY(noTran) REFERENCES transaksi(noTran),
+Constraint FK_detiTransaksi_products FOREIGN KEY(id) REFERENCES products(id)
+) ]
+
+]
+[ TIME: Wed Dec 31 13:52:02 GMT-12:00 2014 ]
+% com.mckoi.database.DatabaseException: Table 'APP.detilTransaksi' already exists.
+	at com.mckoi.database.interpret.CreateTable.evaluate(CreateTable.java:391)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ select * from ditelTransaksi ]
+
+]
+[ TIME: Wed Dec 31 14:22:11 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Table 'APP.ditelTransaksi' was not found.
+	at com.mckoi.database.interpret.Planner.generateFromSet(Planner.java:186)
+	at com.mckoi.database.interpret.Select.prepare(Select.java:119)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Wed Dec 31 15:24:40 GMT-12:00 2014 ]
+% com.mckoi.database.sql.ParseException: Encountered "user" at line 1, column 21.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    "(" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableDeclaration(SQL.java:2005)
+	at com.mckoi.database.sql.SQL.SelectTableList(SQL.java:2043)
+	at com.mckoi.database.sql.SQL.GetTableSelectExpression(SQL.java:1401)
+	at com.mckoi.database.sql.SQL.Select(SQL.java:315)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:162)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Wed Dec 31 15:27:33 GMT-12:00 2014 ]
+% com.mckoi.database.sql.ParseException: Encountered "user" at line 1, column 19.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    "(" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableDeclaration(SQL.java:2005)
+	at com.mckoi.database.sql.SQL.SelectTableList(SQL.java:2043)
+	at com.mckoi.database.sql.SQL.GetTableSelectExpression(SQL.java:1401)
+	at com.mckoi.database.sql.SQL.Select(SQL.java:315)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:162)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ SELECT MAX(idTran) FROM transaksi ]
+
+]
+[ TIME: Wed Dec 31 15:29:25 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Reference 'idTran' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.Expression.prepare(Expression.java:389)
+	at com.mckoi.database.interpret.Planner$QuerySelectColumnSet.prepareSelectColumn(Planner.java:1001)
+	at com.mckoi.database.interpret.Planner$QuerySelectColumnSet.prepare(Planner.java:1060)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:319)
+	at com.mckoi.database.interpret.Select.prepare(Select.java:123)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO detilTransaksi VALUES(1, ABE007, 1) ]
+
+]
+[ TIME: Wed Dec 31 15:32:33 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Can't find column: ABE007
+	at com.mckoi.database.interpret.Statement.resolveColumn(Statement.java:226)
+	at com.mckoi.database.interpret.Statement.resolveVariableName(Statement.java:249)
+	at com.mckoi.database.interpret.Statement.resolveExpression(Statement.java:261)
+	at com.mckoi.database.interpret.Insert.prepare(Insert.java:191)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ UPDATE products SET stok = stok-1 WHERE id=ABE007 ]
+
+]
+[ TIME: Wed Dec 31 15:32:42 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Reference 'ABE007' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.UpdateTable.prepare(UpdateTable.java:117)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ UPDATE products SET stok = stok-1 WHERE id=ABE007 ]
+
+]
+[ TIME: Wed Dec 31 15:34:38 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Reference 'ABE007' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.UpdateTable.prepare(UpdateTable.java:117)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO products VALUES(ABE0514,'Adha Obat',ABE,'400000',98) ]
+
+]
+[ TIME: Wed Dec 31 15:44:18 GMT-12:00 2014 ]
+% com.mckoi.database.StatementException: Can't find column: ABE0514
+	at com.mckoi.database.interpret.Statement.resolveColumn(Statement.java:226)
+	at com.mckoi.database.interpret.Statement.resolveVariableName(Statement.java:249)
+	at com.mckoi.database.interpret.Statement.resolveExpression(Statement.java:261)
+	at com.mckoi.database.interpret.Insert.prepare(Insert.java:191)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Wed Dec 31 16:54:18 GMT-12:00 2014 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+**** Debug log started: Wed Dec 31 20:25:57 GMT-12:00 2014 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO detilTransaksi VALUES(3, 'ABE009', 12) ]
+
+]
+[ TIME: Wed Dec 31 20:26:21 GMT-12:00 2014 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (PK_detilTransaksi) Columns = ( noTranid ) Table = ( APP.detilTransaksi )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Thu Jan 01 13:35:22 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ select * from detilTran ]
+
+]
+[ TIME: Thu Jan 01 16:52:45 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Table 'APP.detilTran' was not found.
+	at com.mckoi.database.interpret.Planner.generateFromSet(Planner.java:186)
+	at com.mckoi.database.interpret.Select.prepare(Select.java:119)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Fri Jan 02 14:43:59 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+[ TIME: Fri Jan 02 16:04:50 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "\'admin\'" at line 2, column 5.
+Was expecting one of:
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnName(SQL.java:4312)
+	at com.mckoi.database.sql.SQL.AssignmentList(SQL.java:2293)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:340)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ update users
+set admin = ture
+where username = 'admin' ]
+
+]
+[ TIME: Fri Jan 02 16:15:28 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'ture' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.Assignment.prepareExpressions(Assignment.java:79)
+	at com.mckoi.database.interpret.UpdateTable.prepare(UpdateTable.java:128)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Fri Jan 02 18:44:28 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "+" at line 2, column 10.
+Was expecting:
+    "=" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.AssignmentList(SQL.java:2294)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:340)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ insert into users (username,pass,admin)values('ass','as'); ]
+
+]
+[ TIME: Fri Jan 02 23:25:41 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseException: Number of columns to insert is different from columns selected to insert to.
+	at com.mckoi.database.interpret.Insert.prepare(Insert.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 00:09:54 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "<EOF>" at line 1, column 44.
+Was expecting one of:
+    ")" ...
+    "," ...
+    "=" ...
+    "==" ...
+    ">" ...
+    "<" ...
+    ">=" ...
+    "<=" ...
+    <NOTEQ> ...
+    "is" ...
+    "like" ...
+    "not" ...
+    "and" ...
+    "or" ...
+    "/" ...
+    "+" ...
+    "-" ...
+    "*" ...
+    "||" ...
+    "regex" ...
+    <REGEX_LITERAL> ...
+    "in" ...
+    "between" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.InsertDataList(SQL.java:1728)
+	at com.mckoi.database.sql.SQL.Insert(SQL.java:972)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:183)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 00:10:29 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "<EOF>" at line 1, column 40.
+Was expecting one of:
+    ")" ...
+    "," ...
+    "=" ...
+    "==" ...
+    ">" ...
+    "<" ...
+    ">=" ...
+    "<=" ...
+    <NOTEQ> ...
+    "is" ...
+    "like" ...
+    "not" ...
+    "and" ...
+    "or" ...
+    "/" ...
+    "+" ...
+    "-" ...
+    "*" ...
+    "||" ...
+    "regex" ...
+    <REGEX_LITERAL> ...
+    "in" ...
+    "between" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.InsertDataList(SQL.java:1728)
+	at com.mckoi.database.sql.SQL.Insert(SQL.java:972)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:183)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO products VALUES('dsf','fds','abe','23',32) ]
+
+]
+[ TIME: Sat Jan 03 00:28:19 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation (fk_products_suppliers) Columns = APP.products( idSupp ) -> APP.suppliers( idSupp )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:2022)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO users VALUES('ads','34',false) ]
+
+]
+[ TIME: Sat Jan 03 01:29:36 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (pk_users) Columns = ( username ) Table = ( APP.users )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO users VALUES('ads','34s',false) ]
+
+]
+[ TIME: Sat Jan 03 01:29:41 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (pk_users) Columns = ( username ) Table = ( APP.users )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'ass' ]
+
+]
+[ TIME: Sat Jan 03 01:44:42 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'ass' ]
+
+]
+[ TIME: Sat Jan 03 01:44:48 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'ass' ]
+
+]
+[ TIME: Sat Jan 03 01:44:52 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'dfs' ]
+
+]
+[ TIME: Sat Jan 03 01:44:57 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'ass' ]
+
+]
+[ TIME: Sat Jan 03 01:45:01 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'sda' ]
+
+]
+[ TIME: Sat Jan 03 01:46:36 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'fd' ]
+
+]
+[ TIME: Sat Jan 03 01:46:42 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where id = 'fd' ]
+
+]
+[ TIME: Sat Jan 03 01:47:20 GMT-12:00 2015 ]
+% com.mckoi.database.StatementException: Reference 'id' not found.
+	at com.mckoi.database.interpret.TableExpressionFromSet.qualifyVariable(TableExpressionFromSet.java:470)
+	at com.mckoi.database.interpret.TableExpressionFromSet$1.prepare(TableExpressionFromSet.java:487)
+	at com.mckoi.database.Expression.prepare(Expression.java:368)
+	at com.mckoi.database.interpret.SearchExpression.prepare(SearchExpression.java:102)
+	at com.mckoi.database.interpret.Planner.prepareSearchExpression(Planner.java:96)
+	at com.mckoi.database.interpret.Planner.formQueryPlan(Planner.java:452)
+	at com.mckoi.database.interpret.Delete.prepare(Delete.java:114)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:144)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where username = 'kasir' ]
+
+]
+[ TIME: Sat Jan 03 01:50:23 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation on delete (fk_transaksi_users) Columns = APP.transaksi( username ) -> APP.users( username )
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.executeDeleteReferentialAction(MasterTableDataSource.java:1532)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1904)
+	at com.mckoi.database.DataTable.delete(DataTable.java:367)
+	at com.mckoi.database.interpret.Delete.evaluate(Delete.java:146)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where username = 'kasir' ]
+
+]
+[ TIME: Sat Jan 03 01:51:41 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation on delete (fk_transaksi_users) Columns = APP.transaksi( username ) -> APP.users( username )
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.executeDeleteReferentialAction(MasterTableDataSource.java:1532)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1904)
+	at com.mckoi.database.DataTable.delete(DataTable.java:367)
+	at com.mckoi.database.interpret.Delete.evaluate(Delete.java:146)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ delete from users where username = 'kasir' ]
+
+]
+[ TIME: Sat Jan 03 01:51:57 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate foreign key constraint violation on delete (fk_transaksi_users) Columns = APP.transaksi( username ) -> APP.users( username )
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.executeDeleteReferentialAction(MasterTableDataSource.java:1532)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1904)
+	at com.mckoi.database.DataTable.delete(DataTable.java:367)
+	at com.mckoi.database.interpret.Delete.evaluate(Delete.java:146)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO detilTransaksi VALUES(1, 'ABE007', 1) ]
+
+]
+[ TIME: Sat Jan 03 01:53:08 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (PK_detilTransaksi) Columns = ( noTranid ) Table = ( APP.detilTransaksi )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO users VALUES('as','as',false) ]
+
+]
+[ TIME: Sat Jan 03 02:07:50 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (pk_users) Columns = ( username ) Table = ( APP.users )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:09:43 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:09:53 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:10:16 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:11:04 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:11:18 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 02:11:42 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "into" at line 1, column 8.
+Was expecting one of:
+    "old" ...
+    "new" ...
+    "name" ...
+    "java" ...
+    "action" ...
+    "groups" ...
+    "option" ...
+    "account" ...
+    "password" ...
+    "language" ...
+    "privileges" ...
+    <QUOTED_VARIABLE> ...
+    <IDENTIFIER> ...
+    <DOT_DELIMINATED_REF> ...
+    <QUOTED_DELIMINATED_REF> ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.TableName(SQL.java:4113)
+	at com.mckoi.database.sql.SQL.Update(SQL.java:338)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:165)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Sat Jan 03 14:45:31 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+% Dropped: 036APP_obat
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ create TABLE obat (
+    id       STRING(20)    NOT NULL UNIQUE,
+    nama   STRING(50),
+    idSupp string(20),
+ harga int,
+ stok int,
+ constraint pk_products primary key(id),
+ constraint fk_products_suppliers foreign key(idSupp) references suppliers(idSupp)
+ 
+) ]
+
+]
+[ TIME: Sat Jan 03 14:48:13 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Deferred unique constraint violation (SYSTEM_PKEY_UNIQUE) Columns = ( nameschema ) Table = ( SYS_INFO.sUSRPKeyInfo )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1985)
+	at com.mckoi.database.TableDataConglomerate.processCommit(TableDataConglomerate.java:2865)
+	at com.mckoi.database.Transaction.closeAndCommit(Transaction.java:2071)
+	at com.mckoi.database.DatabaseConnection.commit(DatabaseConnection.java:1502)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:296)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 14:50:08 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "=" at line 1, column 22.
+Was expecting one of:
+    "drop" ...
+    "alter" ...
+    "add" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.GetAlterTableAction(SQL.java:1598)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:396)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+[ TIME: Sat Jan 03 14:50:14 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "=" at line 1, column 29.
+Was expecting:
+    "(" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.ColumnDeclarationList(SQL.java:2311)
+	at com.mckoi.database.sql.SQL.CreateTable(SQL.java:455)
+	at com.mckoi.database.sql.SQL.AlterTable(SQL.java:402)
+	at com.mckoi.database.sql.SQL.Alter(SQL.java:373)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:168)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+% Dropped: 037APP_obat
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ alter create TABLE obat (
+    id       STRING(20)    NOT NULL UNIQUE,
+    nama   STRING(50),
+    idSupp string(20),
+ harga int,
+ stok int,
+ constraint pk_products primary key(id),
+ constraint fk_products_suppliers foreign key(idSupp) references suppliers(idSupp)
+ 
+) ]
+
+]
+[ TIME: Sat Jan 03 14:50:37 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Deferred unique constraint violation (SYSTEM_PKEY_UNIQUE) Columns = ( nameschema ) Table = ( SYS_INFO.sUSRPKeyInfo )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1985)
+	at com.mckoi.database.TableDataConglomerate.processCommit(TableDataConglomerate.java:2865)
+	at com.mckoi.database.Transaction.closeAndCommit(Transaction.java:2071)
+	at com.mckoi.database.DatabaseConnection.commit(DatabaseConnection.java:1502)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:296)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO detilTransaksi VALUES(1, 'ABE012', 1) ]
+
+]
+[ TIME: Sat Jan 03 14:54:46 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (PK_detilTransaksi) Columns = ( noTranid ) Table = ( APP.detilTransaksi )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO detilTransaksi VALUES(1, 'ABE009', 3) ]
+
+]
+[ TIME: Sat Jan 03 14:54:54 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (PK_detilTransaksi) Columns = ( noTranid ) Table = ( APP.detilTransaksi )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Mon Jan 05 11:28:45 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+[ TIME: Mon Jan 05 11:38:46 GMT-12:00 2015 ]
+% com.mckoi.database.sql.ParseException: Encountered "," at line 1, column 53.
+Was expecting one of:
+    <EOF> 
+    "union" ...
+    "except" ...
+    "group by" ...
+    "order by" ...
+    "intersect" ...
+    ";" ...
+    "=" ...
+    "==" ...
+    ">" ...
+    "<" ...
+    ">=" ...
+    "<=" ...
+    <NOTEQ> ...
+    "is" ...
+    "like" ...
+    "not" ...
+    "and" ...
+    "or" ...
+    "/" ...
+    "+" ...
+    "-" ...
+    "*" ...
+    "||" ...
+    "regex" ...
+    <REGEX_LITERAL> ...
+    "in" ...
+    "between" ...
+    
+	at com.mckoi.database.sql.SQL.generateParseException(SQL.java:6070)
+	at com.mckoi.database.sql.SQL.jj_consume_token(SQL.java:5939)
+	at com.mckoi.database.sql.SQL.Statement(SQL.java:224)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:94)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Mon Jan 05 12:35:56 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+**** Debug log started: Thu Jan 08 02:12:08 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
+> com.mckoi.database.jdbcserver.JDBCDatabaseInterface ( lvl: 20 )
+  Exception thrown during query processing on: [ Query:
+[ INSERT INTO users VALUES('sd','sd',false) ]
+
+]
+[ TIME: Thu Jan 08 04:27:21 GMT-12:00 2015 ]
+% com.mckoi.database.DatabaseConstraintViolationException: Immediate primary Key constraint violation (pk_users) Columns = ( username ) Table = ( APP.users )
+	at com.mckoi.database.TableDataConglomerate.checkAddConstraintViolations(TableDataConglomerate.java:1963)
+	at com.mckoi.database.MasterTableDataSource$MMutableTableDataSource.constraintIntegrityCheck(MasterTableDataSource.java:1924)
+	at com.mckoi.database.DataTable.add(DataTable.java:180)
+	at com.mckoi.database.interpret.Insert.evaluate(Insert.java:261)
+	at com.mckoi.database.interpret.SQLQueryExecutor.execute(SQLQueryExecutor.java:147)
+	at com.mckoi.database.jdbcserver.AbstractJDBCDatabaseInterface.execQuery(AbstractJDBCDatabaseInterface.java:461)
+	at com.mckoi.database.jdbcserver.JDBCDatabaseInterface.execQuery(JDBCDatabaseInterface.java:251)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.queryCommand(JDBCProcessor.java:352)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processQuery(JDBCProcessor.java:293)
+	at com.mckoi.database.jdbcserver.JDBCProcessor.processJDBCCommand(JDBCProcessor.java:196)
+	at com.mckoi.database.jdbcserver.StreamJDBCServerConnection.processRequest(StreamJDBCServerConnection.java:137)
+	at com.mckoi.database.jdbcserver.MultiThreadedConnectionPoolServer$ClientThread$1.run(MultiThreadedConnectionPoolServer.java:171)
+	at com.mckoi.database.WorkerThread.run(WorkerThread.java:123)
+**** Debug log started: Thu Jan 08 19:28:22 GMT-12:00 2015 ****
+% Storage System: v1 file storage mode.
+% Internal Data Cache size:          4194304
+% Internal Data Cache max cell size: 8192
+% lookup_comparison_list = false
+% read_only = false
+% transaction_error_on_dirty_select = true
+% ignore_case_for_identifiers = false
+% Java NIO API is available.
+% io_safety_level = 10
+% Using stardard IO API for heap buffered file access.
+% [Buffer Manager] Using IO API: Java IO
+% [Buffer Manager] Page Size: 8192
+% [Buffer Manager] Max pages: 256
+% Using regex bridge: java.util.regexp
+% No 'function_factories' config property found.
+% statement_cache = true
+% Max worker threads set to: 4
+% Starting Database Server
+> com.mckoi.database.V1FileStoreSystem ( lvl: 20 )
+  File lock file exists: .\data\DefaultDatabase.lock
